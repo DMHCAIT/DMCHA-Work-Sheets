@@ -29,7 +29,7 @@ const login = async (req, res, next) => {
 
     // Find user
     const result = await query(
-      `SELECT u.*, r.name as role_name, r.permissions, d.name as department_name
+      `SELECT u.*, r.name as role_name, r.permissions, d.department_name
        FROM users u
        LEFT JOIN roles r ON u.role_id = r.id
        LEFT JOIN departments d ON u.department_id = d.id
